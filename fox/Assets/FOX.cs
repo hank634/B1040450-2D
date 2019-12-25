@@ -1,4 +1,5 @@
 ﻿using UnityEngine;   //引用 Unity API-API 倉庫 功能 工具
+using UnityEngine.Events;
 
 public class FOX : MonoBehaviour   //類別 類別名稱
 {
@@ -9,6 +10,8 @@ public class FOX : MonoBehaviour   //類別 類別名稱
     public string CC = "狐狸";    //字串
       public bool pass = false;     //布林值 -true/false
     public bool isGround;
+
+    public UnityEvent onEat;
 
     private Rigidbody2D r2d;
     //private Transform tra;
@@ -31,6 +34,7 @@ public class FOX : MonoBehaviour   //類別 類別名稱
     }
 
     //固定更新事件 每禎 0.002秒
+
     private void FixedUpdate()
     {
         Walk();//呼叫方法
@@ -41,6 +45,15 @@ public class FOX : MonoBehaviour   //類別 類別名稱
     {
         isGround = true;
         Debug.Log("碰到東西了" + collision.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag=="cherry")
+            {
+            Destroy(collision.gameObject);
+            onEat.Invoke();
+        }
     }
 
 
