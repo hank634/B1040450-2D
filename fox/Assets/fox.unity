@@ -975,7 +975,35 @@ MonoBehaviour:
   countPlayer: 0
   ObjCanvas: {fileID: 667710536}
   textSay: {fileID: 626770610}
-  soundSay: {fileID: 0}
+  soundSay: {fileID: 8300000, guid: e8d294b2222e9f14493f400514ea09d8, type: 3}
+--- !u!1 &745391175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745391176}
+  m_Layer: 0
+  m_Name: "\u6AA2\u67E5\u5730\u677F"
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745391176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745391175}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.2834773, y: 0.2729634, z: 0.035999514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1170773255}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170773252
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,8 +1017,9 @@ GameObject:
   - component: {fileID: 1170773258}
   - component: {fileID: 1170773257}
   - component: {fileID: 1170773256}
+  - component: {fileID: 1170773259}
   m_Layer: 0
-  m_Name: opossum-1
+  m_Name: mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1067,9 +1096,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1170773252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.03, y: 0.66, z: 0}
+  m_LocalPosition: {x: 10.45, y: -0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 745391176}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1087,7 +1117,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.26
+  m_Radius: 2.33
 --- !u!58 &1170773257
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1102,7 +1132,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.11, y: 0}
   serializedVersion: 2
-  m_Radius: 0.69
+  m_Radius: 0.89
 --- !u!50 &1170773258
 Rigidbody2D:
   serializedVersion: 4
@@ -1123,6 +1153,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1170773259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170773252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5deaef7288bb550458081f6c6231a6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  damage: 20
+  checkPoint: {fileID: 745391176}
 --- !u!1 &1200664314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1178,7 @@ GameObject:
   - component: {fileID: 1200664317}
   - component: {fileID: 1200664316}
   - component: {fileID: 1200664318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\u5730\u677F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
