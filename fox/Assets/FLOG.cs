@@ -97,7 +97,7 @@ public class FLOG : MonoBehaviour
         for(int i=0; i< say.Length;i++)            //迴圈跑對話.長度
         {
             textSay.text += say[i].ToString();                //累加每個文字
-            aud.PlayOneShot(soundSay, 1.5f);
+            
             yield return new WaitForSeconds(speed);     //等待
         }
     }

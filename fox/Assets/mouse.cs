@@ -27,6 +27,7 @@ public class mouse : MonoBehaviour
         Gizmos.DrawRay(checkPoint.position, -checkPoint.up * 1.5f); //圖示 繪製射線(中心點 方向*長度)
     }
 
+    //持續觸發
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.name=="FOX")
@@ -35,6 +36,13 @@ public class mouse : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "FOX" && collision.transform.position.y <transform.position.y+1)
+        {
+            collision.gameObject.GetComponent<FOX>().Damage(damage);
+        }
+    }
 
 
     /// <summary>

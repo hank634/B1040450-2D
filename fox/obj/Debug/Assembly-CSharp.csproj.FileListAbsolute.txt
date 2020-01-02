@@ -500,3 +500,4 @@ C:\Users\User\Documents\GitHub\B1040450-2D\fox\Temp\bin\Debug\UnityEngine.Spatia
 C:\Users\User\Documents\GitHub\B1040450-2D\fox\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.xml
 C:\Users\User\Documents\GitHub\B1040450-2D\fox\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\B1040450-2D\fox\obj\Debug\Assembly-CSharp.pdb
+C:\Users\User\Documents\B1040450-2D-master\fox\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
