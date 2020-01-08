@@ -1,5 +1,6 @@
 ﻿using UnityEngine;   //引用 Unity API-API 倉庫 功能 工具
-using UnityEngine.Events;
+using UnityEngine.Events; //引用 事件 API
+using UnityEngine.UI; //引用 介面 API
 
 public class FOX : MonoBehaviour   //類別 類別名稱
 {
@@ -7,7 +8,7 @@ public class FOX : MonoBehaviour   //類別 類別名稱
     //修飾詞 類型 名稱 指定 值;
     public int speed = 50;          //整數
     public float jump = 2.5f;       //浮點數
-    public string CC = "狐狸";    //字串
+    public string C = "狐狸";    //字串
       public bool pass = false;     //布林值 -true/false
     public bool isGround;
 
@@ -16,13 +17,26 @@ public class FOX : MonoBehaviour   //類別 類別名稱
     private Rigidbody2D r2d;
     //private Transform tra;
 
+[Header("血量"),Range(0,200)]
+    public float hp = 100;
+
+    public Image hpBar;
+    public GameObject final;
+
+    private float hpmax;
+
+
     //事件 在特定時間點會以指定頻率執行的方法
     //開始事件 遊戲開始時執行一次
     private void Start()
     {
         //泛型<T>
         r2d = GetComponent<Rigidbody2D>();
+       
+
+
         //tra = GetComponent<Transform>();
+        hpmax = hp;
     }
 
     //更新事件:每秒執行60次
@@ -87,4 +101,13 @@ private void  Walk()
     {
         transform.eulerAngles = new Vector3(0, direction ,0);
     }
+
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        hpBar.fillAmount = hp / hpmax;
+
+        if (hp <= 0) final.SetActive(true);
+    }
+
 }
